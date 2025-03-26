@@ -11,6 +11,8 @@ python = "^3.12"
 
 [tool.poetry.group.dev.dependencies]
 types-requests = "^2.32.0.20250301"
+isort = "^6.0.1"
+black = "^25.1.0"
 
 
 [tool.poetry.group.lint.dependencies]
