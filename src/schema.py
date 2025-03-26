@@ -15,10 +15,10 @@ def create_database(db_name: str, user: str, password: str) -> None:
     :param password: Пароль пользователя для подключения к PostgreSQL.
     """
     try:
-        connection = psycopg2.connect(user=user, password=password, host="localhost", port="5432", dbname=db_name)
+        connection = psycopg2.connect(user=user, password=password, host="localhost", port="5432", dbname="postgres")
         connection.autocommit = True
         cursor = connection.cursor()
-        cursor.execute("DROP DATABASE IF EXISTS job_vacancies_db;")
+        cursor.execute("DROP DATABASE IF EXISTS {};".format(db_name))
         cursor.execute(f"CREATE DATABASE {db_name};")
         print(f"База данных '{db_name}' успешно создана.")
     except Exception as e:
